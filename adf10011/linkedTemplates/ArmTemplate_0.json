@@ -186,7 +186,8 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileName": "highvalueorders.csv",
+						"fileName": ".csv",
+						"folderPath": "highvalue",
 						"fileSystem": "result"
 					},
 					"columnDelimiter": ",",
