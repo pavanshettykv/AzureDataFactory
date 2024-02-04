@@ -93,9 +93,6 @@
 					},
 					"ls_gcp_oder_items_properties_typeProperties_accessKeyId": {
 						"value": "[parameters('ls_gcp_oder_items_properties_typeProperties_accessKeyId')]"
-					},
-					"trigger_on_orders_file_properties_typeProperties_scope": {
-						"value": "[parameters('trigger_on_orders_file_properties_typeProperties_scope')]"
 					}
 				}
 			},
@@ -114,6 +111,9 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"trigger_on_orders_file_properties_typeProperties_scope": {
+						"value": "[parameters('trigger_on_orders_file_properties_typeProperties_scope')]"
 					}
 				}
 			},

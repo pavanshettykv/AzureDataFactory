@@ -980,7 +980,7 @@
 				"pipelines": [
 					{
 						"pipelineReference": {
-							"referenceName": "pl_ingest_orders",
+							"referenceName": "pl_orchestrate",
 							"type": "PipelineReference"
 						},
 						"parameters": {}
@@ -997,7 +997,7 @@
 				}
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/pipelines/pl_ingest_orders')]"
+				"[concat(variables('factoryId'), '/pipelines/pl_orchestrate')]"
 			]
 		},
 		{
