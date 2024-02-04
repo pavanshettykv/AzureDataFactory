@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf10011"
+		},
+		"ls_AmazonS3_secretAccessKey": {
+			"value": ""
+		},
+		"ls_AzureBlobStorage_connectionString": {
+			"value": ""
+		},
+		"ls_AzureDataLakeStorage_accountKey": {
+			"value": ""
+		},
+		"ls_gcp_oder_items_secretAccessKey": {
+			"value": ""
+		},
+		"ls_AmazonS3_properties_typeProperties_accessKeyId": {
+			"value": "AKIATCKAQMCPA7ZBHB7G"
+		},
+		"ls_AzureDataLakeStorage_properties_typeProperties_url": {
+			"value": "https://dlkaccount.dfs.core.windows.net/"
+		},
+		"ls_gcp_oder_items_properties_typeProperties_accessKeyId": {
+			"value": "GOOG3XL2A6HHIZONL3U4FY54"
+		}
+	}
+}
