@@ -1,0 +1,17 @@
+{
+	"name": "trigger_on_orders_file",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/ordersinput/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/58b57763-ddb6-4a5c-89b2-6b5dc4941add/resourceGroups/adf/providers/Microsoft.Storage/storageAccounts/blobacccount",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
