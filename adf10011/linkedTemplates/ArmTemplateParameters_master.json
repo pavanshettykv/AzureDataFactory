@@ -29,6 +29,9 @@
 		"ls_gcp_oder_items_properties_typeProperties_accessKeyId": {
 			"value": "GOOG3XL2A6HHIZONL3U4FY54"
 		},
+		"trigger_on_orders_file_properties_typeProperties_scope": {
+			"value": "/subscriptions/58b57763-ddb6-4a5c-89b2-6b5dc4941add/resourceGroups/adf/providers/Microsoft.Storage/storageAccounts/blobacccount"
+		},
 		"containerUri": {
 			"value": ""
 		},

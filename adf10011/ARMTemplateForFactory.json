@@ -38,6 +38,10 @@
 		"ls_gcp_oder_items_properties_typeProperties_accessKeyId": {
 			"type": "string",
 			"defaultValue": "GOOG3XL2A6HHIZONL3U4FY54"
+		},
+		"trigger_on_orders_file_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/58b57763-ddb6-4a5c-89b2-6b5dc4941add/resourceGroups/adf/providers/Microsoft.Storage/storageAccounts/blobacccount"
 		}
 	},
 	"variables": {
@@ -500,7 +504,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
-						"fileName": "*",
+						"fileName": "part-merged.csv",
 						"folderPath": "highvalue",
 						"fileSystem": "result"
 					},
@@ -850,6 +854,26 @@
 						"type": "SecureString",
 						"value": "[parameters('ls_gcp_oder_items_secretAccessKey')]"
 					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trigger_on_orders_file')]",
+			"type": "Microsoft.DataFactory/factories/triggers",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"runtimeState": "Stopped",
+				"pipelines": [],
+				"type": "BlobEventsTrigger",
+				"typeProperties": {
+					"blobPathBeginsWith": "/ordersinput/blobs/",
+					"ignoreEmptyBlobs": true,
+					"scope": "[parameters('trigger_on_orders_file_properties_typeProperties_scope')]",
+					"events": [
+						"Microsoft.Storage.BlobCreated"
+					]
 				}
 			},
 			"dependsOn": []

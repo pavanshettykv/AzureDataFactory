@@ -39,6 +39,10 @@
 			"type": "string",
 			"defaultValue": "GOOG3XL2A6HHIZONL3U4FY54"
 		},
+		"trigger_on_orders_file_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/58b57763-ddb6-4a5c-89b2-6b5dc4941add/resourceGroups/adf/providers/Microsoft.Storage/storageAccounts/blobacccount"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -89,10 +93,33 @@
 					},
 					"ls_gcp_oder_items_properties_typeProperties_accessKeyId": {
 						"value": "[parameters('ls_gcp_oder_items_properties_typeProperties_accessKeyId')]"
+					},
+					"trigger_on_orders_file_properties_typeProperties_scope": {
+						"value": "[parameters('trigger_on_orders_file_properties_typeProperties_scope')]"
 					}
 				}
 			},
 			"dependsOn": []
+		},
+		{
+			"name": "adf10011_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'adf10011_ArmTemplate_0')]"
+			]
 		}
 	]
 }
